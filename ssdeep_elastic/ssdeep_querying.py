@@ -77,18 +77,17 @@ def get_matching_items_by_ssdeep(ssdeep_value, threshold_grade):
 
 
 if __name__ == '__main__':
-    # I simplified the sha256 values to make it more readable
     item_1 = {'ssdeep': '768:v7XINhXznVJ8CC1rBXdo0zekXUd3CdPJxB7mNmDZkUKMKZQbFTiKKAZTy:ShT8C+fuioHq1KEFoAU',
-              'sha256': 'item_1'}
+              'sha256': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'}
     item_2 = {'ssdeep': '768:C7XINhXznVJ8CC1rBXdo0zekXUd3CdPJxB7mNmDZkUKMKZQbFTiKKAZTV6:ThT8C+fuioHq1KEFoAj6',
-              'sha256': 'item_2'}
+              'sha256': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'}
     item_3 = {
         'ssdeep': '768:t2m3D9SlK1TVYatO/tkqzWQDG/ssC7XkZDzYYFTdqiP1msdT1OhN7UmSaED7Etnc:w7atyfzWgGEXszYYF4iosdTE1zz2+Ze',
-        'sha256': 'item_3'}
+        'sha256': 'cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc'}
 
     insert_record_to_ssdeep_index(item_1['ssdeep'], item_1['sha256'])
     insert_record_to_ssdeep_index(item_3['ssdeep'], item_3['sha256'])
 
     matching_items = get_matching_items_by_ssdeep(item_2['ssdeep'], 90)
 
-    print(matching_items)  # This will only print "Item 1"
+    print(matching_items)  # This will only print The first item
