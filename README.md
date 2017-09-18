@@ -1,2 +1,2 @@
 # ssdeep-elastic
-An example for implementation of ssdeep similarity search optimized with elasticsearch
+Example implementation of [ssdeep](http://www.forensicswiki.org/wiki/Ssdeep) similarity search optimized with [Elasticsearch](https://www.elastic.co/products/elasticsearch)
