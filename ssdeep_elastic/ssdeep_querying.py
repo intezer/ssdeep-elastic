@@ -40,21 +40,26 @@ def get_matching_items_by_ssdeep(ssdeep_value, threshold_grade):
                         'terms': {
                             'chunksize': [chunksize, chunksize * 2, int(chunksize / 2)]
                         }
-                    }
-                ],
-                'should': [
-                    {
-                        'match': {
-                            'chunk': {
-                                'query': chunk
-                            }
-                        }
                     },
                     {
-                        'match': {
-                            'double_chunk': {
-                                'query': double_chunk
-                            }
+                        'bool': {
+                            'should': [
+                                {
+                                    'match': {
+                                        'chunk': {
+                                            'query': chunk
+                                        }
+                                    }
+                                },
+                                {
+                                    'match': {
+                                        'double_chunk': {
+                                            'query': double_chunk
+                                        }
+                                    }
+                                }
+                            ],
+                            'minimum_should_match': 1
                         }
                     }
                 ]
